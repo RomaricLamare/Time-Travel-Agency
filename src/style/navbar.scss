@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap%22);");
+
 .nav {
     display: flex;
     align-items: center;
@@ -17,6 +19,10 @@
         font-family: 'Inter', sans-serif;
         font-weight: 900;
         font-size: 1.2rem;
+    }
+
+    .nav-agency-title{
+        font-family: 'Zen Dots', cursive;
     }
 
 
@@ -39,7 +45,8 @@
     }
 
     a {
-        transform: scale(80%)
+        transform: scale(80%);
+        transition: 0.2s;
     }
 
     & a:hover{
@@ -51,13 +58,14 @@
   .parallelogramme { 
     right: 0;
     display: flex;
-    width: 25%;
+    width: 28%;
     position: absolute;
     height: 105%;
     border-bottom  : 150px solid #293F46;
     border-left : 90px solid transparent;
     animation: slide-in ;
     animation-duration: 0.4s;
+    
     
 
     

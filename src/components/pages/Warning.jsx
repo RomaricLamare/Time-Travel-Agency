@@ -1,33 +1,41 @@
 import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { AiOutlineWarning } from "react-icons/ai";
+import { RiErrorWarningLine } from "react-icons/ri";
+import { ImCross } from "react-icons/im";
 
 function Warning() {
     const [showPopup, setShowPopup] = useState(false);
 
-    const handleClick = () => {
-        setShowPopup(true);
-    };
+     const handleClick = (e) => {
+        e.preventDefault();
+        alert("Votre commande a bien été prise en compte. Nos équipes reviendront vers vous rapidement afin d'entamer le protocole de préparation.")
+    }
 
     const popupClose = () => {
         setShowPopup(false);
     };
+    const navigate = useNavigate();
     return (
         <> <div className="warning">
-            <h1 className="warning-title">Avertissement sur le voyage temporel</h1>
+            <ImCross className="iconCross" onClick={() => navigate(-1)}/>
+            <h1 className="warning-title"> <AiOutlineWarning id="icon" />  Avertissement sur le voyage temporel  <AiOutlineWarning id="icon" /></h1>
 
             <div className="disclaimer">
-                <p>AVERTISSEMENT : Le voyage temporel est une activité extrêmement dangereuse et imprévisible.</p>
+
+                <p>  AVERTISSEMENT : Le voyage temporel est une activité extrêmement dangereuse et imprévisible.</p>
                 <p>L'entreprise XYZ décline toute responsabilité quant aux conséquences du voyage temporel, y compris, mais sans s'y limiter :</p>
                 <ul className="warning-list">
-                    <li>Perte de données</li>
-                    <li>Domages matériels</li>
-                    <li>Boucles temporelles</li>
-                    <li>Modification de l'histoire</li>
-                    <li>Rencontres avec des versions antérieures ou futures de soi-même</li>
+                    <li> <RiErrorWarningLine /> Perte de données</li>
+                    <li> <RiErrorWarningLine /> Dommages matériels</li>
+                    <li> <RiErrorWarningLine /> Boucles temporelles</li>
+                    <li> <RiErrorWarningLine /> Altération de l'histoire</li>
+                    <li> <RiErrorWarningLine /> Rencontres avec des versions antérieures ou futures de soi-même</li>
                 </ul>
                 <p>En poursuivant le voyage temporel, vous reconnaissez que vous le faites entièrement à vos propres risques.</p>
             </div>
 
-            <div className="disclaimer">
+            <div className="disclaimer2">
                 <h2 className="warning-instructions">Instructions de sécurité</h2>
                 <p>Avant de procéder au voyage temporel, veuillez prendre en compte les éléments suivants :</p>
                 <ol>
@@ -39,17 +47,9 @@ function Warning() {
                 </ol>
             </div >
             <div className="button">
-                <button onClick={handleClick}>J'accepte les conditions</button>
-
-                {showPopup && (
-                    <div className="popup">
-                        <div className="popup-content">
-                            <h2>Confirmation</h2>
-                            <p>Etes-vous certain d'avoir bien compris les conditions et avertissements ?</p>
-                            <button onClick={popupClose}>Fermer</button>
-                        </div>
-                    </div>
-                )}
+                <NavLink to="/confirmation">
+                    <button>J'accepte les conditions</button>
+                </NavLink>
             </div>
         </div>
         </>
