@@ -10,13 +10,13 @@ const NavBar = () => {
                 </div>
                 <div className="social">
                         <a href="https://fr-fr.facebook.com/">
-                            <img src="src/assets/img/fb.png" alt="logo facebook" />
+                            <img src="../public/fb.png" alt="logo facebook" />
                         </a>
                         <a href="https://www.instagram.com/">
-                            <img src="src/assets/img/insta.png" alt="logo instagram" />
+                            <img src="../public/insta.png" alt="logo instagram" />
                         </a>
                         <a href="https://www.tiktok.com/fr/">
-                            <img src="src/assets/img/tiktok.png" alt="logo tiktok" />
+                            <img src="../public/tiktok.png" alt="logo tiktok" />
                         </a>
                     </div>
                 <div className="parallelogramme">
