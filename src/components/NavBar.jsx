@@ -10,7 +10,7 @@ const NavBar = () => {
                 </div>
                 <div className="social">
                         <a href="https://fr-fr.facebook.com/">
-                            <img src="src/assets/img/fb.png" alt="logo facebook" />
+                            <img src="./src/assets/img/fb.png" alt="logo facebook" />
                         </a>
                         <a href="https://www.instagram.com/">
                             <img src="src/assets/img/insta.png" alt="logo instagram" />
