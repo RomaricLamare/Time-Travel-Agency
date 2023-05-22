@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap%22)");
+@font-face {
+    font-family: 'Zen Dots';
+    src: url('../components/img/fonts/ZenDots-Regular.ttf') format('truetype'); 
+}
 
 .nav {
     display: flex;
