@@ -11,7 +11,7 @@ function AboutUs() {
             <div className="about-container">
             <ImCross className="iconCross" onClick={() => navigate(-1)}/>
                 <div className="about-image">
-                    <img className='img-machine' src="../public/machine.jpeg" alt="The Time Machine" />
+                    <img className='img-machine' src="public/img/machine.jpeg" alt="The Time Machine" />
                     </div>
                     <div className="text-container-about">
                     <p className="about-text">
