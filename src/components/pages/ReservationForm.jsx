@@ -10,7 +10,7 @@ import { ImCross } from "react-icons/im";
 
 const ReservationForm = () => {
     const [initialPrice, setInitialPrice] = useState(0)
-    const [totalPrice, setTotalPrice] = useState(initialPrice)
+    const [totalPrice, setTotalPrice] = useState(0)
     const [nbAdultes, setNbAdultes] = useState(1)
     const [nbEnfants, setNbEnfants] = useState(0)
     const [nbBebes, setNbBebes] = useState(0)
@@ -25,16 +25,18 @@ const ReservationForm = () => {
 
     const supabase = createClient(`https://umnptqfditgysgbpzoyx.supabase.co/`, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtbnB0cWZkaXRneXNnYnB6b3l4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4MTA2MjUsImV4cCI6MTk5OTM4NjYyNX0.LExHLdYK2bAdq0ronsaNNl9VDAeMwhTw0SVzB735W5o");
 
-    useEffect(() => {
-        gettable()
-    }, [id]);
-
     async function gettable() {
         const { data } = await supabase.from("jean").select().eq('id', id);
         setTable(data);
         setInitialPrice(data[0].tarif)
-
+        setTotalPrice(data[0].tarif)
     }
+
+    useEffect(() => {
+        gettable()
+    }, [id]);
+
+
 
     function handleClickAddAdult() {
         setNbAdultes(nbAdultes + 1)
